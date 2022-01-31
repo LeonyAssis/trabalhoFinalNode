@@ -212,6 +212,9 @@ function init() {
     });
 }
 //-----------------------------------------------------------------------------------------------------------------------------//
-
+function admDiv() {
+    document.getElementById("permission-error").innerHTML = "Você não pode executar esta operação!";
+    document.getElementById("permission-error").style.display = "inline";
+}
 
 document.onload = init();
