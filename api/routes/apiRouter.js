@@ -56,12 +56,15 @@ let isAdmin = (req, res, next) => {
 }
 
 apiRouter.post(endpoint + 'seguranca/register', (req, res) => {
-    knex('usuario')
+    console.log(process.env.DATABASE_URL),
+    console.log(req.body)
+    knex('public.usuario') 
         .insert({
             nome: req.body.nome,
             login: req.body.login,
             senha: bcrypt.hashSync(req.body.senha, 8),
-            email: req.body.email
+            email: req.body.email,
+            roles: req.body.role
         }, ['id'])
         .then((result) => {
             let usuario = result[0]
@@ -70,12 +73,13 @@ apiRouter.post(endpoint + 'seguranca/register', (req, res) => {
         })
         .catch(err => {
             res.status(500).json({
-                message: 'Erro ao registrar usuario - ' + err.message
+                message: 'Erro ao registrar usuario - ' + err.message + err
             })
         })
 });
 
 apiRouter.post(endpoint + 'seguranca/login', (req, res) => {
+    
     knex
         .select('*').from('usuario').where({ login: req.body.login })
         .then(usuarios => {
@@ -98,12 +102,11 @@ apiRouter.post(endpoint + 'seguranca/login', (req, res) => {
                     return
                 }
             }
-
             res.status(200).json({ message: 'Login ou senha incorretos' })
         })
         .catch(err => {
             res.status(500).json({
-                message: 'Erro ao verificar login - ' + err.message
+                message: 'Erro ao verificar login - ' + err.message + err
             })
         })
 });

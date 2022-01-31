@@ -27,4 +27,10 @@ function validateUser() {
 }
 
 
+function redirectCadastro() {
+    window.location = '/cadastro'
+}
+
+
+
 

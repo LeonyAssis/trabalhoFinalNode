@@ -1,15 +1,17 @@
 .body-cadastro{
-background-color: #adb5bd;
+background-color: #e9ecef ;
+
 }
 .cadastro{
-    margin: 20% auto auto auto;
+    margin: 10% auto auto auto;
     width: 30%;       
     padding: 10px;
     border: 1px solid rgba(0,0,0,.2);
     box-shadow: 0 0 13px 3px rgb(0 0 0 / 50%);
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 10px; 
     background-color: white;
+    text-align: center; 
 }
 
 .cadastro-button{
@@ -19,14 +21,3 @@ background-color: #adb5bd;
     
 }
 
-#permission-error{
-    display: none;
-    color: #ff0000;  
-}
-
-
-#sucess-register{
-    display: none;
-    color: #008000;
-  
-}

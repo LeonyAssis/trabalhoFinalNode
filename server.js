@@ -13,6 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api', apiRouter);
 app.use('/', express.static(path.join(__dirname, '/views/login')));
 app.use('/app', express.static(path.join(__dirname, '/public')));
+app.use('/cadastro', express.static(path.join(__dirname, '/views/cadastro')));
 app.use('/products', express.static(path.join(__dirname, '/views/products')));
 
 app.use('/products/:id', (req, res) => {
