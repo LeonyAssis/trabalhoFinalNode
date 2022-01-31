@@ -36,7 +36,7 @@ function redirectMenu(value) {
             window.location = '/app'
             break
         case 3:
-            window.location = '/products'
+            window.location = '/cadastro'
             break
         default:
     }
