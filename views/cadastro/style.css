@@ -1,7 +1,7 @@
 .body-cadastro{
 background-color: #e9ecef ;
-
 }
+
 .cadastro{
     margin: 10% auto auto auto;
     width: 30%;       
@@ -17,7 +17,10 @@ background-color: #e9ecef ;
 .cadastro-button{
     float: right;
     margin-top: 12px;
-    width: 35%;;
-    
+    width: 35%;
 }
 
+#senhaincorreta { 
+    display: none;
+    color:red;
+}

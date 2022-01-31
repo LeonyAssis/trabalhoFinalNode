@@ -35,8 +35,18 @@ function getValues() {
   var e = document.getElementById("field_ID");  
   var selected_value = e.options[e.selectedIndex].label;
   let userRole = selected_value;
-
   return { userName, userEmail, userLogin, userPassword, userRole }
 }
 
-
+$( "#senhaconf" ).keyup(function() {
+  let senha = $( "#senha" );
+  if (this.value != senha.val()){
+    $("#submitButton").prop("disabled",true);
+    $(this).css("border","1px solid red ");
+    $("#senhaincorreta").show();
+  }else { 
+    $("#submitButton").prop("disabled",false);
+    $(this).css("border","1px solid #ced4da");
+    $("#senhaincorreta").hide();  
+  }
+});
